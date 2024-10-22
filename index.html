@@ -4,12 +4,12 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/darkly/bootstrap.min.css" integrity="sha384-ae362vOLHy2F1EfJtpMbNW0i9pNM1TP2l5O4VGYYiLJKsaejqVWibbP6BSf0UU5i" crossorigin="anonymous" />
-		<title>Exam Timer</title>
+		<title>Minuterie d'examen</title>
 		<!-- link rel="stylesheet" href="style.css" /-->
 	</head>
 	<body>
 		<nav class="navbar navbar-expand navbar-dark bg-primary">
-			<span class="navbar-brand mb-0 h1 mr-auto">Davo's Exam Timer</span>
+			<span class="navbar-brand mb-0 h1 mr-auto">Minuterie Examen (Davo's Exam Timer)</span>
 			<div class="navbar-nav">
 				<a class="nav-item nav-link" href="#" data-toggle="modal" data-target="#configure">Configure</a>
 			</div>
@@ -18,14 +18,14 @@
 		<div class="container mt-4">
 			<h1 id="exam-title"></h1>
 			<div class="row mt-3">
-				<div class="col"><h4>Reading time:</h4> <h3 id="time-reading-start"></h3></div>
-				<div class="col"><h4>Writing time:</h4> <h3 id="time-writing-start"></h3></div>
-				<div class="col"><h4>Finish:</h4> <h3 id="time-end"></h3></div>
+				<div class="col"><h4>Heure lecture:</h4> <h3 id="time-reading-start"></h3></div>
+				<div class="col"><h4>Heure examen:</h4> <h3 id="time-writing-start"></h3></div>
+				<div class="col"><h4>Fin examen:</h4> <h3 id="time-end"></h3></div>
 			</div>
 			<div class="mt-4">
-				<div class="text-center"><h4>Time now:</h4> <p id="clock" class="display-1"></p></div>
+				<div class="text-center"><h4>Heure courante:</h4> <p id="clock" class="display-1"></p></div>
 				<div class="text-center">
-					<h4>Time until <span id="end-type">...</span>:</h4>
+					<h4>Heure Fin <span id="end-type">...</span>:</h4>
 					<p id="countdown" class="display-1"><span id="cd-h-wrapper"><span id="countdown-hours">0</span>h</span> <span id="cd-m-wrapper"><span id="countdown-minutes">00</span>m</span> <span id="cd-s-wrapper"><span id="countdown-seconds">00</span>s</span></p>
 				</div>
 			</div>
@@ -43,19 +43,19 @@
 					<form id="config-form">
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="config-exam-title">Exam title (optional):</label>
+								<label for="config-exam-title">Titre d'examen (optionel):</label>
 								<input type="text" class="form-control" id="config-exam-title" />
 							</div>
 							<div class="form-group">
-								<label for="config-reading-time">Reading time start:</label>
+								<label for="config-reading-time">Heure de lecture:</label>
 								<input type="time" class="form-control" id="config-reading-time" value="10:10" />
 							</div>
 							<div class="form-group">
-								<label for="config-writing-time">Writing time start:</label>
+								<label for="config-writing-time">Heure début examen:</label>
 								<input type="time" class="form-control" id="config-writing-time" value="10:15" />
 							</div>
 							<div class="form-group">
-								<label for="config-end-time">End time:</label>
+								<label for="config-end-time">Heure fin d'examen:</label>
 								<input type="time" class="form-control" id="config-end-time" value="11:40" />
 							</div>
 						</div>
