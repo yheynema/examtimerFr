@@ -34,17 +34,17 @@ function tick() {
 	if (msToWriting < 0) {
 		// writing time has started, exam not finished
 		duration = moment.duration(msToEnd);
-		$("#end-type").text("end");
+		$("#end-type").text("Terminé!");
 	} else {
 		const msToReading = readingTimeStart.diff(now);
 		if (msToReading < 0) {
 			// reading time has started
 			duration = moment.duration(msToWriting);
-			$("#end-type").text("writing time starts");
+			$("#end-type").text("avant la fin de l'examen");
 		} else {
 			// waiting for reading time
 			duration = moment.duration(msToReading);
-			$("#end-type").text("reading time starts");
+			$("#end-type").text("de lecture");
 		}
 	}
 
@@ -58,7 +58,7 @@ $(() => {
 
 	$("#config-form").submit(event => {
 		readConfig();
-		$("#configure").modal("hide");
+		$("#configure").modal("cacher");
 		event.preventDefault();
 	});
 
