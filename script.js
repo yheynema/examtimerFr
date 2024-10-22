@@ -32,25 +32,37 @@ function tick() {
 	let duration;
 	const msToWriting = writingTimeStart.diff(now);
 	if (msToWriting < 0) {
-		// writing time has started, exam not finished
+		// writing time has ended, exam started finished
 		duration = moment.duration(msToEnd);
-		$("#end-type").text("Terminé!");
+		const msToExam = endTime.diff(now);
+		if (msToEnd>0) {
+			$("#end-type").text("avant la fin de l'examen");
+			//Mettre en blanc "time-reading-start"
+			//Mettre en vert "time-writing-start"
+			
+		} else {
+			$("#end-type").text("TERMINÉ");
+			//Mettre en blanc "time-reading-start"
+			//Mettre en blanc "time-writing-start"
+			//Mettre en rouge "time-end"
+		}
 	} else {
 		const msToReading = readingTimeStart.diff(now);
 		if (msToReading < 0) {
 			// reading time has started
 			duration = moment.duration(msToWriting);
-			$("#end-type").text("avant la fin de l'examen");
+			$("#end-type").text("avant la fin de lecture");
+			//Mettre en vert "time-reading-start"
 		} else {
 			// waiting for reading time
 			duration = moment.duration(msToReading);
-			$("#end-type").text("de lecture");
+			$("#end-type").text("avant la lecture");
 		}
 	}
 
-	$("#countdown-hours").text(duration.hours());
-	$("#countdown-minutes").text(String(duration.minutes()).padStart(2, "0"));
-	$("#countdown-seconds").text(String(duration.seconds()).padStart(2, "0"));
+		$("#countdown-hours").text(duration.hours());
+		$("#countdown-minutes").text(String(duration.minutes()).padStart(2, "0"));
+		$("#countdown-seconds").text(String(duration.seconds()).padStart(2, "0"));
 }
 
 $(() => {
@@ -58,7 +70,7 @@ $(() => {
 
 	$("#config-form").submit(event => {
 		readConfig();
-		$("#configure").modal("cacher");
+		$("#configure").modal("hide");
 		event.preventDefault();
 	});
 

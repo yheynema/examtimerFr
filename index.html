@@ -4,8 +4,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.1.1/darkly/bootstrap.min.css" integrity="sha384-ae362vOLHy2F1EfJtpMbNW0i9pNM1TP2l5O4VGYYiLJKsaejqVWibbP6BSf0UU5i" crossorigin="anonymous" />
-		<title>Minuterie d'examen</title>
-		<meta credits="https://github.com/auscompgeek/examtimer">
+		<title>Minuterie examen</title>
+		<!-- <meta credits="https://github.com/auscompgeek/examtimer"> -->
 		<!-- link rel="stylesheet" href="style.css" /-->
 	</head>
 	<body>
@@ -19,9 +19,9 @@
 		<div class="container mt-4">
 			<h1 id="exam-title"></h1>
 			<div class="row mt-3">
-				<div class="col"><h4>Heure début lecture:</h4> <h3 id="time-reading-start"></h3></div>
-				<div class="col"><h4>Heure début examen:</h4> <h3 id="time-writing-start"></h3></div>
-				<div class="col"><h4>Fin de l'examen:</h4> <h3 id="time-end"></h3></div>
+				<div class="col"><h4>Heure debut la lecture:</h4> <h3 id="time-reading-start"></h3></div>
+				<div class="col"><h4>Heure debut l'examen:</h4> <h3 id="time-writing-start"></h3></div>
+				<div class="col"><h4>Heure de fin de l'examen:</h4> <h3 id="time-end"></h3></div>
 			</div>
 			<div class="mt-4">
 				<div class="text-center"><h4>Heure courante:</h4> <p id="clock" class="display-1"></p></div>
@@ -44,7 +44,7 @@
 					<form id="config-form">
 						<div class="modal-body">
 							<div class="form-group">
-								<label for="config-exam-title">Titre d'examen (optionel):</label>
+								<label for="config-exam-title">Titre examen (optionel):</label>
 								<input type="text" class="form-control" id="config-exam-title" />
 							</div>
 							<div class="form-group">
@@ -52,11 +52,11 @@
 								<input type="time" class="form-control" id="config-reading-time" value="10:10" />
 							</div>
 							<div class="form-group">
-								<label for="config-writing-time">Heure début examen:</label>
+								<label for="config-writing-time">Heure debut de l'examen:</label>
 								<input type="time" class="form-control" id="config-writing-time" value="10:15" />
 							</div>
 							<div class="form-group">
-								<label for="config-end-time">Heure fin d'examen:</label>
+								<label for="config-end-time">Heure fin de l'examen:</label>
 								<input type="time" class="form-control" id="config-end-time" value="11:40" />
 							</div>
 						</div>
