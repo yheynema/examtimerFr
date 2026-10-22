@@ -41,12 +41,23 @@ function tick() {
 		duration = moment.duration(msToEnd);
 		const msToExam = endTime.diff(now);
 		if (msToEnd>0) {
+			//Yh. si tu cherches, regarde jQuery
 			$("#end-type").text("avant la fin de l'examen");
 			//Mettre en blanc "time-reading-start"
 			$("#time-reading-start").css("color","white");
 			//Mettre en vert "time-writing-start"
 			$("#time-writing-start").css("color","green");
 			$("#time-end").css("color","red");
+			if (msToExam>(59*60*1000)) {  //S'il y a + que 1h, on affiche
+			  $("#cd-h-wrapper").show();
+			} else $("#cd-h-wrapper").hide();
+			if (msToExam>(16*60*1000)) {
+			  $("#cd-s-wrapper").hide();			  
+			} else {
+			  $("#cd-s-wrapper").show();
+			  $("#time-bef-end").css("color","yellow");
+			}
+			if (msToExam<(6*60*1000)) $("#time-bef-end").css("color","orange");
 			
 		} else {
 			$("#end-type").text("TERMINÉ");
@@ -56,6 +67,7 @@ function tick() {
 			$("#time-writing-start").css("color","red");
 			//Mettre en rouge "time-end"
 			$("#time-end").css("color","red");
+			$("#time-bef-end").css("color","red");
 		}
 	} else {
 		const msToReading = readingTimeStart.diff(now);
